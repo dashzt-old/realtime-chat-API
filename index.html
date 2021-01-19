@@ -1,0 +1,20 @@
+<head>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+  <script>
+    var socket = io()
+
+    socket.emit(
+      'CHAT_MESSAGE',
+      {
+        body: 'Hey gays'
+      }
+    )
+
+    socket.on('CHAT_MESSAGE', (msg) => {
+      console.log('RECIEVED', msg)
+    })
+  </script>
+</body>
